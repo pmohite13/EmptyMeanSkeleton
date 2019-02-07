@@ -1,0 +1,34 @@
+<!-- <mat-sidenav-container class="app-sidenav-container" autosize> -->
+    <!-- <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'"> -->
+    <!-- <mat-sidenav #sidenav class="app-sidenav mat-elevation-z10" [opened]="!isOrganizationContext() && !isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'">
+
+        <mat-toolbar color="primary">Projects</mat-toolbar>
+        <marquee class="marqueeHeight" direction="up" onmouseover="this.stop();" onmouseout="this.start();"
+            scrollamount="5">
+            <mat-list>
+                <a mat-list-item *ngFor="let project of projects let i = index" [routerLink]="['/shell/applyToProject', project._id]">
+                    <img matListAvatar src="../../../../assets/images/organization_profile.jpg" alt="...">
+                    <h3 matLine> {{project.organization.orgName}} </h3>
+                    <p matLine>
+                        is looking for volunteers
+                    </p>
+                    <p matLine> in area of {{project.workArea.name}}</p>
+                </a>
+            </mat-list>
+        </marquee>
+    </mat-sidenav>
+
+    <div class="app-sidenav-content">
+        <app-toolbar (toggleSidenav)="sidenav.toggle()"></app-toolbar>
+
+        <div class="wrapper">
+            <router-outlet></router-outlet>
+        </div> -->
+
+        <!-- Footer -->
+        <!-- <app-footer></app-footer> -->
+        <!-- Footer -->
+
+    <!-- </div>
+
+</mat-sidenav-container> -->
