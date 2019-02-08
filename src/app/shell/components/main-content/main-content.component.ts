@@ -24,7 +24,7 @@ export class MainContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUser();
+    //this.getUser();
   }
 
   // public onTileClicked(tile: Tile) {
@@ -37,48 +37,7 @@ export class MainContentComponent implements OnInit {
   }
 
 
-  private getUser() {
-
-    let token = localStorage.getItem('token');
-    if (token) {
-      this.dataService.getUser(token)
-        .subscribe((user: IUser) => {
-
-          this.user = user;
-
-          if (this.user.entityId === 1) {
-            this.dataService.getVolunteerByUser(this.user._id)
-              .subscribe((volunteer: IVolunteer) => {
-
-                this.volunteer = volunteer[0];
-                if (this.volunteer) {
-                  this.router.navigate(['shell/volunteerProfile']);
-                }
-                else {
-                  this.router.navigate(['shell/newVolunteer', '0']);
-                }
-              },
-                (err) => console.log(err));
-          }
-          if (this.user.entityId === 2) {
-            this.dataService.getOrganizationByUser(this.user._id)
-              .subscribe((organization: IOrganization) => {
-
-                this.organization = organization[0];
-                if (this.organization) {
-                  this.router.navigate(['shell/organizationProfile']);
-                }
-                else {
-                  this.router.navigate(['shell/organization', '0']);
-                }
-              },
-                (err) => console.log(err));
-          }
-        },
-          (err) => console.log(err));
-    }
-  }
-
+ 
 }
 
 export interface Tile {

@@ -20,12 +20,7 @@ export class ToolbarComponent implements OnInit {
    
     let token = localStorage.getItem('token');
     this.showSignOutButton = !!token;
-    this.businessService.loggedIn$().subscribe(isLoggedIn => {
-
-      if (isLoggedIn) {
-        this.showSignOutButton = true;
-      }
-    });
+  
    
     if (this.router.url.indexOf('organization') > 0 || this.router.url.indexOf('projectApplicationView') > 0 || this.router.url.indexOf('addProject') > 0) {
       this.showToggleButton = false;

@@ -8,9 +8,7 @@ import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { DataService } from './data.service';
 import { DataFilterService } from './data-filter.service';
 import { Sorter } from './sorter';
-import { TrackByService } from './trackby.service';
 import { EnsureModuleLoadedOnceGuard } from '../shared/ensureModuleLoadedOnceGuard';
-import { RegisterService } from './register.service';
 import { ValidationService } from '../shared/validation.service';
 import { BusinessService } from './business.service';
 
@@ -25,7 +23,7 @@ import { BusinessService } from './business.service';
     //   headerName: 'My-X-XSRF-TOKEN',
     // })
   ],
-  providers: [DataService, DataFilterService, Sorter, TrackByService, RegisterService, ValidationService, BusinessService]
+  providers: [DataService, DataFilterService, Sorter, ValidationService, BusinessService]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    //Ensure that CoreModule is only loaded into AppModule
 

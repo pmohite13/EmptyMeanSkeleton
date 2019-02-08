@@ -30,11 +30,9 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getProjectList(1);
+   // this.getProjectList(1);
 
-    this.businessService.project$().subscribe(_ => {
-      this.getProjectList(1);
-    });
+    
 
     this.router.events.subscribe(() => {
       if (this.isScreenSmall()) {
@@ -52,16 +50,6 @@ export class SidenavComponent implements OnInit {
     return this.mediaMatcher.matches;
   }
 
-  getProjectList(page: number) {
-
-    this.dataService.getProjectsPage((page - 1) * this.pageSize, this.pageSize, true)
-      .subscribe((response: IPagedResults<IProject[]>) => {
-
-        this.projects = this.filteredProjects = response.results;
-        this.totalRecords = response.totalRecords;
-      },
-        (err: any) => console.log(err),
-        () => console.log('getCustomersPage() retrieved customers'));
-  }
+  
 
 }
